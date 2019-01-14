@@ -8,12 +8,15 @@ let contextmenu = document.getElementsByClassName('contextmenu')[0];
 
 //滚动
 profileBox.addEventListener('mousewheel', function (e) {
+    console.log(11)
+    console.log(e)
     let top,
         max = 40,
         min = this.offsetHeight - profileBody.offsetHeight - 50;
     min = 40 < min ? 40 : min;
     e.stopPropagation();
-    let delta = e.wheelDelta || e.detail;
+    let delta = e.wheelDelta ? e.wheelDelta : e.detail;
+    console.log(delta)
     if (delta > 0) {
         top = profileBody.offsetTop + 150;
         if (top <= max) {
@@ -32,11 +35,11 @@ profileBox.addEventListener('mousewheel', function (e) {
     }
 });
 
-profileBody.addEventListener('dblclick',function(e) {
-    e.preventDefault();
-    window.getSelection().removeAllRanges();
-    return false;
-},false);
+// profileBody.addEventListener('dblclick',function(e) {
+//     e.preventDefault();
+//     window.getSelection().removeAllRanges();
+//     return false;
+// },false);
 
 profileBody.addEventListener('click',function(e) {
     let li = global.getClosest('.profile-item',e.target);

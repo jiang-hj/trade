@@ -183,6 +183,7 @@ aside {
     left: 0;    
     top: 60px;
     bottom: 0;
+    background-color: #fff;
 }
 
 .box-filtrate > div {
