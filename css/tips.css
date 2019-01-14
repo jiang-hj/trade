@@ -1,0 +1,44 @@
+/* 提示信息 */
+.tips-box {
+    line-height: 35px;
+    position: fixed;
+    left: 50%;
+    top: -35px;
+    opacity: 0.8;
+    margin-left: -100px;   
+    z-index: 100; 
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+.tips {
+    width: 250px;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+.correct,
+.error,
+.warning {
+    transition: 0.3s;
+}
+
+.correct .tips {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border-color: #d6e9c6;
+}
+
+.error .tips {
+    background-color: #f2dede;
+    color: #a94442;
+    border-color: #ebccd1;
+}
+
+.warning .tips {
+    background-color: #f0ad4e;
+    color: #fff;
+    border-color: #eea236;
+}

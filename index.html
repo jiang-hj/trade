@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/datas.js"></script>
+    <script src="js/checkLogin.js"></script>
+    <link rel="stylesheet" type="text/css" href="fontIcon/iconfont.css">
+    <link rel="stylesheet" href="css/init.css">
+    <link rel="stylesheet" href="css/tips.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/change.css">
+    <link rel="stylesheet" href="css/md.css">
+    <link rel="stylesheet" href="css/warning.css">
+</head>
+
+<body>
+    <div id="app_main">
+        <header id="header">
+            <a href="#" id="logo_link">
+                <img id="logo" src="img/logo.svg" alt="logo">
+            </a>
+            <div class="login-wraper">
+                <div class="user">
+                    欢迎，
+                    <a class="userName" href="#page=setting">admin</a>
+                    <a class="logout" href="javascript:;">注销</a>
+                </div>
+                <!-- <div class="login">
+                    <a href="#">登录</a>
+                    <a href="#">注册</a>
+                </div> -->
+            </div>
+        </header>
+        <main id="main">
+            <aside id="nav_wraper">
+                <div class="box-new">
+                    <a href="#" id="new">
+                        <i class="icon iconfont icon-add"></i>
+                        <sapn>
+                            新建
+                        </sapn>
+                    </a>
+                </div>
+                <ul class="nav-ul">
+                    <li class="nav-li">
+                        <a href="#page=editing" class="menu-bill-editing">
+                            <i class="icon iconfont icon-brush"></i>
+                            <span>正在编辑</span>
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#page=history" class="menu-bill-completed">
+                            <i class="icon iconfont icon-activity"></i>
+                            <span>归档资料</span>
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#page=tools">
+                            <i class="icon iconfont icon-manage"></i>
+                            <span>实用工具</span>
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#page=setting">
+                            <i class="icon iconfont icon-setup"></i>
+                            <span>系统设置</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <div id="content">
+                <div id="page_profile">
+                    <div class="box-menu">
+                        <div class="edit-wraper fLeft">
+                            <a href="javascript:;" class="profile-open-btn">
+                                <i class="icon iconfont icon-editor"></i>
+                                <span>打开单证</span>
+                            </a>
+                            <a href="javascript:;" class="profile-change-btn">
+                                <i class="icon iconfont icon-zhuanhuan"></i>
+                                <span>变更状态</span>
+                            </a>
+                            <a href="javascript:;" class="profile-copy-btn">
+                                <i class="icon iconfont icon-fuzhi"></i>
+                                <span>复制单证</span>
+                            </a>
+                            <a href="javascript:;" class="profile-delete-btn">
+                                <i class="icon iconfont icon-empty"></i>
+                                <span>删除单证</span>
+                            </a>
+                        </div>
+
+                        <div class="search-wraper fRight">
+                            <input type="text" name="searchBill" placeholder="搜索...">
+                        </div>
+                    </div>
+                    <div class="box-filtrate scrollbar">
+                        <div class="category">
+                            <h5>业务分类</h5>
+                            <div class="category-checkAll category-menu checked">
+                                <i class="checkbox iconfont"></i>
+                                <span>全选</span>
+                            </div>
+                            <ul class="category-wrap">
+                                <!-- <li class="category-menu">
+                                    <i class="checkbox iconfont checked"></i>
+                                    <span>业务1</span>
+                                </li> -->
+                            </ul>
+                        </div>
+                        <div class="advanced-filtrate">
+                            <h5>高级筛选</h5>
+                            <form action="">
+                                <div class="by-date">
+                                    <span>按申报时间</span>
+                                    <label for="" class="md-ele">起始时间：<input type="text" name="begin"></label>
+                                    <label for="" class="md-ele">结束时间：<input type="text" name="end"></label>
+                                </div>
+                                <div class="by-usd">
+                                    <span>按货物总额</span>
+                                    <label for="">最小总额：<input type="text" name="minAmount"></label>
+                                    <label for="">最大总额：<input type="text" name="maxAmount"></label>
+                                </div>
+
+                                <p>
+                                    <input type="button" name="profile-submit" value="确定">
+                                    <input type="reset" name="profile-reset">
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="box-profile">
+                        <div class="profile-head">
+                            <span>申报日期</span>
+                            <span>合同号</span>
+                            <span>提单号</span>
+                            <span>箱号</span>
+                            <span>目的港</span>
+                            <span>主要货物</span>
+                            <span>主要工厂</span>
+                            <span>货物总额</span>
+                            <span>件数</span>
+                            <span>体积</span>
+                            <span>毛重</span>
+                        </div>
+                        <ul class="profile-body">
+                            <!-- <li>
+                                <span>2019-12-12</span>
+                                <span>ABC19-12112122</span>
+                                <span>abc12345678910</span>
+                                <span>12345678910</span>
+                                <span>1234567891011</span>
+                                <span>主要货物</span>
+                                <span>主要工厂</span>
+                                <span>货物总额</span>
+                                <span>件数</span>
+                                <span>体积</span>
+                                <span>10000.96</span>
+                            </li>                            
+                        </ul> -->
+                    </div>
+                </div>
+
+                <!-- 详情页 -->
+
+                <div id="page_detail" class="scrollbar">
+                    <!-- <div class="button-box-top">
+                        <a href="#" class="close">关闭</a>
+                    </div> -->
+                    <div class="detail">
+
+                        <!--  表头  -->
+                        <div class="bill-header">
+                            <table>
+                                <tr>
+                                    <td class="td-left">
+                                        <label class="must-fill-in" for="contract_number">合同号</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="contractNumber" id="contract_number">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="customer_category">客户分类</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="customerCategory" id="customer_category">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="export_date">出口日期</label>
+                                    </td>
+                                    <td class="md-ele">
+                                        <input class="edit-box" type="text" name="exportDate" id="export_date">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="document_date">制单日期</label>
+                                    </td>
+                                    <td class="md-ele">
+                                        <input class="edit-box" type="text" name="documentDate" id="document_date">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left" colspan="2" rowspan="3">
+                                        <label class="must-fill-in" for="shipper">发货人</label>
+                                        <textarea class="edit-box" name="shipper" id="shipper"></textarea>
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <p class="error-msg"></p>
+                                        <label class="must-fill-in" for="trade_mode">监管方式(贸易方式)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="tradeMode" id="trade_mode">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="taxation">征税性质</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="taxation" id="taxation">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="payment">结汇方式</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="payment" id="payment">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="must-fill-in" for="destination_port_chs">指运港(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="destinationPortChs" id="destination_port_chs">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="destination_port_en">指运港(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="destinationPortEn" id="destination_port_en">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="price_terms">价格条款</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="priceTerms" id="price_terms">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="must-fill-in" for="destination_state_chs">抵运国(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="destinationStateChs" id="destination_state_chs">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="destination_state_en">抵运国(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="destinationStateEn" id="destination_state_en">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label for="freight">运费</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="freight" id="freight">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left" colspan="2" rowspan="3">
+                                        <label class="must-fill-in" for="consignee">收货人</label>
+                                        <textarea class="edit-box" name="consignee" id="consignee" cols="30" rows="10"></textarea>
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="trade_state_chs">贸易国(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="tradeStateChs" id="trade_state_chs">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="trade_state_en">贸易国(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="tradeStateEn" id="trade_state_en">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label for="premium">保费</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="premium" id="premium">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="must-fill-in" for="loading_port_chs">启运港(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="loadingPortChs" id="loading_port_chs">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="loading_port_en">启运港(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="loadingPortEn" id="loading_port_en">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label for="other_charge">杂费</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="otherCharge" id="other_charge">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="must-fill-in" for="transportation_mode">运输方式</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="transportationMode" id="transportation_mode">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="conveyance">运输工具名称及航次</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="conveyance" id="conveyance">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="bl_number">提单号</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="blNumber" id="bl_number">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left" colspan="2" rowspan="3">
+                                        <label class="must-fill-in" for="notify">通知人(notify)</label>
+                                        <textarea class="edit-box" name="notify" id="notify" cols="30" rows="10"></textarea>
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="container_type">集装箱规格</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="containerType" id="container_type">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="seal_number">铅封号</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="sealNumber" id="seal_number">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label class="must-fill-in" for="container_number">集装箱号</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="containerNumber" id="container_number">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="must-fill-in" for="">包装方式</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="packaging" id="packaging">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label for="record_number">备案号</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="recordNumber" id="record_number">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label for="license_number">许可证号</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="licenseNumber" id="license_number">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="must-fill-in" for="marks">标记唛码</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="marks" id="marks">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label for="remarks">备注(报关单)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="remarks" id="remarks">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                    <td>
+                                        <label for="user_remarks">用户备注(不在单证上显示)</label>
+                                    </td>
+                                    <td>
+                                        <input class="edit-box" type="text" name="userRemarks" id="user_remarks">
+                                        <p class="error-msg"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>件数<input class="edit-box" disabled type="text" name="allPackagesNumber"></td>
+                                    <td>毛重<input class="edit-box" disabled type="text" name="allGrossWeight"></td>
+                                    <td>净重<input class="edit-box" disabled type="text" name="allNetWeight"></td>
+                                    <td>体积<input class="edit-box" disabled type="text" name="allVolume"></td>
+                                    <td>总美金<input class="edit-box" disabled type="text" name="total" id=""></td>
+                                    <td>主要货物<input class="edit-box" disabled type="text" name="mainProduct"></td>
+                                    <td>主要工厂</td>
+                                    <td><input class="edit-box" disabled type="text" name="mainFactory" id="main_factory"></td>
+                                </tr>
+                            </table>
+                            <div class="my-select-wraper scrollbar"></div>
+                        </div>
+
+                        <!-- 明细部分 -->
+                        <div class="item-list">
+                            <table class="item-list-table">
+                                <thead>
+                                    <tr>
+                                        <th>项号</th>
+                                        <th>hs编码</th>
+                                        <th>商品描述</th>
+                                        <th>数量及单位</th>
+                                        <th>报关单价/总价</th>
+                                        <th>件数</th>
+                                        <th>毛重</th>
+                                        <th>净重</th>
+                                        <th>体积</th>
+                                        <th>货源地</th>
+                                        <th>采购单价/总价</th>
+                                        <th>换汇成本</th>
+                                        <th>工厂</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="item-list-tbody">
+                                    <tr draggable="true">
+                                        <td class="item-list-index">1</td>
+                                        <td>12345678910</td>
+                                        <td>
+                                            <p>涤纶布 polyester</p>
+                                            <p>梭织|未漂白|平纹|100%人棉|140厘米|120克</p>
+                                        </td>
+                                        <td>10000.00 米 (M)</td>
+                                        <td>
+                                            <p>1.2340</p>
+                                            <p>12340.00 </p>
+                                            <p>美元</p>
+                                        </td>
+                                        <td>
+                                            12345
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            123.34
+                                        </td>
+                                        <td>
+                                            义乌33079
+                                        </td>
+                                        <td>
+                                            <p>10.23</p>
+                                            <p>102300.00</p>
+                                        </td>
+                                        <td>
+                                            6.23
+                                        </td>
+                                        <td>
+                                            浙江金华兰溪某某纺织有限公司
+                                        </td>
+                                        <td>
+                                            <span>编辑</span>
+                                            <span>删除</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>12345678910</td>
+                                        <td>
+                                            <p>涤纶布 polyester</p>
+                                            <p>梭织|未漂白|平纹|100%人棉|140厘米|120克</p>
+                                        </td>
+                                        <td>10000.00 米 (M)</td>
+                                        <td>
+                                            <p>1.2340</p>
+                                            <p>12340.00 </p>
+                                            <p>美元</p>
+                                        </td>
+                                        <td>
+                                            12345
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            123.34
+                                        </td>
+                                        <td>
+                                            义乌33079
+                                        </td>
+                                        <td>
+                                            <p>10.23</p>
+                                            <p>102300.00</p>
+                                        </td>
+                                        <td>
+                                            6.23
+                                        </td>
+                                        <td>
+                                            浙江金华兰溪某某纺织有限公司
+                                        </td>
+                                        <td>
+                                            <span>编辑</span>
+                                            <span>删除</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>12345678910</td>
+                                        <td>
+                                            <p>涤纶布 polyester</p>
+                                            <p>梭织|未漂白|平纹|100%人棉|140厘米|120克</p>
+                                        </td>
+                                        <td>10000.00 米 (M)</td>
+                                        <td>
+                                            <p>1.2340</p>
+                                            <p>12340.00 </p>
+                                            <p>美元</p>
+                                        </td>
+                                        <td>
+                                            12345
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            123.34
+                                        </td>
+                                        <td>
+                                            义乌33079
+                                        </td>
+                                        <td>
+                                            <p>10.23</p>
+                                            <p>102300.00</p>
+                                        </td>
+                                        <td>
+                                            6.23
+                                        </td>
+                                        <td>
+                                            浙江金华兰溪某某纺织有限公司
+                                        </td>
+                                        <td>
+                                            <span>编辑</span>
+                                            <span>删除</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>12345678910</td>
+                                        <td>
+                                            <p>涤纶布 polyester</p>
+                                            <p>梭织|未漂白|平纹|100%人棉|140厘米|120克</p>
+                                        </td>
+                                        <td>10000.00 米 (M)</td>
+                                        <td>
+                                            <p>1.2340</p>
+                                            <p>12340.00 </p>
+                                            <p>美元</p>
+                                        </td>
+                                        <td>
+                                            12345
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            123.34
+                                        </td>
+                                        <td>
+                                            义乌33079
+                                        </td>
+                                        <td>
+                                            <p>10.23</p>
+                                            <p>102300.00</p>
+                                        </td>
+                                        <td>
+                                            6.23
+                                        </td>
+                                        <td>
+                                            浙江金华兰溪某某纺织有限公司
+                                        </td>
+                                        <td>
+                                            <span>编辑</span>
+                                            <span>删除</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>12345678910</td>
+                                        <td>
+                                            <p>涤纶布 polyester</p>
+                                            <p>梭织|未漂白|平纹|100%人棉|140厘米|120克</p>
+                                        </td>
+                                        <td>10000.00 米 (M)</td>
+                                        <td>
+                                            <p>1.2340</p>
+                                            <p>12340.00 </p>
+                                            <p>美元</p>
+                                        </td>
+                                        <td>
+                                            12345
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            123.34
+                                        </td>
+                                        <td>
+                                            义乌33079
+                                        </td>
+                                        <td>
+                                            <p>10.23</p>
+                                            <p>102300.00</p>
+                                        </td>
+                                        <td>
+                                            6.23
+                                        </td>
+                                        <td>
+                                            浙江金华兰溪某某纺织有限公司
+                                        </td>
+                                        <td>
+                                            <span>编辑</span>
+                                            <span>删除</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>12345678910</td>
+                                        <td>
+                                            <p>涤纶布 polyester</p>
+                                            <p>梭织|未漂白|平纹|100%人棉|140厘米|120克</p>
+                                        </td>
+                                        <td>10000.00 米 (M)</td>
+                                        <td>
+                                            <p>1.2340</p>
+                                            <p>12340.00 </p>
+                                            <p>美元</p>
+                                        </td>
+                                        <td>
+                                            12345
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            12345.12
+                                        </td>
+                                        <td>
+                                            123.34
+                                        </td>
+                                        <td>
+                                            义乌33079
+                                        </td>
+                                        <td>
+                                            <p>10.23</p>
+                                            <p>102300.00</p>
+                                        </td>
+                                        <td>
+                                            6.23
+                                        </td>
+                                        <td>
+                                            浙江金华兰溪某某纺织有限公司
+                                        </td>
+                                        <td>
+                                            <span>编辑</span>
+                                            <span>删除</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- 添加按钮 -->
+                            <div class="add-item-box">
+                                <i class="item-list-add iconfont icon-addition_fill"></i>
+                            </div>
+
+                            <!-- 明细编辑 -->
+                            <div class="item-list-edit">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label class="must-fill-in" for="hs_code">hs编码</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="hsCode" id="hs_code">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="product_name_chs">品名(中文)</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="productNameChs" id="product_name_chs">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="product_name_en">品名(英文)</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="productNameEn" id="product_name_en">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="product_info">报关要素</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="productInfo" id="product_info">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="must-fill-in" for="packages_number">件数</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="packagesNumber" id="packages_number">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="gross_weight">毛重</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="grossWeight" id="gross_weight">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="net_weight">净重</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="netWeight" id="net_weight">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="volume">体积</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="volume" id="volume">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="must-fill-in" for="quantity">数量</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="quantity" id="quantity">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="unit_chs">单位(中文)</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="unitChs" id="unit_chs">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="unit_en">单位(英文)</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="unitEn" id="unit_en">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="manufacture_place">货源地</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="manufacturePlace" id="manufacture_place">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="must-fill-in" for="unit_price">报关单价</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="unitPrice" id="unit_price">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="amount">报关总价</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="amount" id="amount">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="currency">币种</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="currency" id="currency">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="drawback">退税率(%)</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="drawback" id="drawback">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="must-fill-in" for="purchase_unit_price">购入单价</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="purchaseUnitPrice" id="purchase_unit_price">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label class="must-fill-in" for="purchase_amount">购入总价</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="purchaseAmount" id="purchase_amount">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label for="factory">工厂</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="factory" id="factory">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                        <td>
+                                            <label for="coefficient">换汇成本</label>
+                                        </td>
+                                        <td>
+                                            <input type="text" disabled name="coefficient" id="coefficient">
+                                            <p class="error-msg"></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="item-list-btns">
+                                    <span class="item-list-save">确定</span>
+                                    <span class="item-list-copy">复制</span>
+                                    <span class="item-list-cancel">取消</span>
+                                </div>
+                                <div class="my-select-wraper scrollbar"></div>
+                            </div>
+                        </div>
+                        <div class="detail-btns">
+                            <span class="detail-print">打印预览</span>
+                            <span class="detail-save">保存</span>
+                            <span class="detail-copy">复制</span>
+                            <span class="detail-close">关闭</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="page_preview" class="scrollbar">
+                    <!-- <div class="button-box-top">
+                        <a href="#" class="close">关闭</a>
+                    </div> -->
+                    <div class="detail">
+
+                        <!--  表头  -->
+                        <div class="bill-header">
+                            <table>
+                                <tr>
+                                    <td class="td-left">
+                                        <label for="contract_number">合同号</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="contractNumber" id="contract_number">
+                                    </td>
+                                    <td>
+                                        <label for="customer_category">客户分类</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="customerCategory" id="customer_category">
+                                    </td>
+                                    <td>
+                                        <label for="export_date">出口日期</label>
+                                    </td>
+                                    <td class="md-ele">
+                                        <input readonly class="edit-box" type="text" name="exportDate" id="export_date">
+                                    </td>
+                                    <td>
+                                        <label for="document_date">制单日期</label>
+                                    </td>
+                                    <td class="md-ele">
+                                        <input readonly class="edit-box" type="text" name="documentDate" id="document_date">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left" colspan="2" rowspan="3">
+                                        <label for="shipper">发货人</label>
+                                        <textarea readonly class="edit-box" name="shipper" id="shipper"></textarea>
+                                    </td>
+                                    <td>
+                                        <label for="trade_mode">监管方式(贸易方式)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="tradeMode" id="trade_mode">
+                                    </td>
+                                    <td>
+                                        <label for="taxation">征税性质</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="taxation" id="taxation">
+                                    </td>
+                                    <td>
+                                        <label for="payment">结汇方式</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="payment" id="payment">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="destination_port_chs">指运港(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="destinationPortChs" id="destination_port_chs">
+                                    </td>
+                                    <td>
+                                        <label for="destination_port_en">指运港(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="destinationPortEn" id="destination_port_en">
+                                    </td>
+                                    <td>
+                                        <label for="price_terms">价格条款</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="priceTerms" id="price_terms">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="destination_state_chs">抵运国(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="destinationStateChs" id="destination_state_chs">
+                                    </td>
+                                    <td>
+                                        <label for="destination_state_en">抵运国(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="destinationStateEn" id="destination_state_en">
+                                    </td>
+                                    <td>
+                                        <label for="freight">运费</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="freight" id="freight">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left" colspan="2" rowspan="3">
+                                        <label for="consignee">收货人</label>
+                                        <textarea readonly class="edit-box" name="consignee" id="consignee" cols="30"
+                                            rows="10"></textarea>
+                                    </td>
+                                    <td>
+                                        <label for="trade_state_chs">贸易国(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="tradeStateChs" id="trade_state_chs">
+                                    </td>
+                                    <td>
+                                        <label for="trade_state_en">贸易国(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="tradeStateEn" id="trade_state_en">
+                                    </td>
+                                    <td>
+                                        <label for="premium">保费</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="premium" id="premium">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="loading_port_chs">启运港(中文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="loadingPortChs" id="loading_port_chs">
+                                    </td>
+                                    <td>
+                                        <label for="loading_port_en">启运港(英文)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="loadingPortEn" id="loading_port_en">
+                                    </td>
+                                    <td>
+                                        <label for="other_charge">杂费</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="otherCharge" id="other_charge">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="transportation_mode">运输方式</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="transportationMode" id="transportation_mode">
+                                    </td>
+                                    <td>
+                                        <label for="conveyance">运输工具名称及航次</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="conveyance" id="conveyance">
+                                    </td>
+                                    <td>
+                                        <label for="bl_number">提单号</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="blNumber" id="bl_number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left" colspan="2" rowspan="3">
+                                        <label for="notify">通知人(notify)</label>
+                                        <textarea readonly class="edit-box" name="notify" id="notify" cols="30" rows="10"></textarea>
+                                    </td>
+                                    <td>
+                                        <label for="container_type">集装箱规格</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="containerType" id="container_type">
+                                    </td>
+                                    <td>
+                                        <label for="seal_number">铅封号</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="sealNumber" id="seal_number">
+                                    </td>
+                                    <td>
+                                        <label for="container_number">集装箱号</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="containerNumber" id="container_number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="">包装方式</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="packaging" id="packaging">
+                                    </td>
+                                    <td>
+                                        <label for="record_number">备案号</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="recordNumber" id="record_number">
+                                    </td>
+                                    <td>
+                                        <label for="license_number">许可证号</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="licenseNumber" id="license_number">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="marks">标记唛码</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="marks" id="marks">
+                                    </td>
+                                    <td>
+                                        <label for="remarks">备注(报关单)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="remarks" id="remarks">
+                                    </td>
+                                    <td>
+                                        <label for="user_remarks">用户备注(不在单证上显示)</label>
+                                    </td>
+                                    <td>
+                                        <input readonly class="edit-box" type="text" name="userRemarks" id="user_remarks">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>件数<input readonly class="edit-box" type="text" name="allPackagesNumber"></td>
+                                    <td>毛重<input readonly class="edit-box" type="text" name="allGrossWeight"></td>
+                                    <td>净重<input readonly class="edit-box" type="text" name="allNetWeight"></td>
+                                    <td>体积<input readonly class="edit-box" type="text" name="allVolume"></td>
+                                    <td>总美金<input readonly class="edit-box" type="text" name="total" id=""></td>
+                                    <td>主要货物<input readonly class="edit-box" type="text" name="mainProduct"></td>
+                                    <td>主要工厂</td>
+                                    <td><input readonly class="edit-box" type="text" name="mainFactory" id="main_factory"></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- 明细部分 -->
+                        <div class="item-list">
+                            <table class="item-list-table">
+                                <thead>
+                                    <tr>
+                                        <th>项号</th>
+                                        <th>hs编码</th>
+                                        <th>商品描述</th>
+                                        <th>数量及单位</th>
+                                        <th>报关单价/总价</th>
+                                        <th>件数</th>
+                                        <th>毛重</th>
+                                        <th>净重</th>
+                                        <th>体积</th>
+                                        <th>货源地</th>
+                                        <th>采购单价/总价</th>
+                                        <th>换汇成本</th>
+                                        <th>工厂</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="item-list-tbody">
+
+                                </tbody>
+                            </table>
+
+                            <!-- 明细查看 -->
+                            <div class="item-list-edit">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <label for="hs_code">hs编码</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="hsCode" id="hs_code">
+                                        </td>
+                                        <td>
+                                            <label for="product_name_chs">品名(中文)</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="productNameChs" id="product_name_chs">
+                                        </td>
+                                        <td>
+                                            <label for="product_name_en">品名(英文)</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="productNameEn" id="product_name_en">
+                                        </td>
+                                        <td>
+                                            <label for="product_info">报关要素</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="productInfo" id="product_info">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="packages_number">件数</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="packagesNumber" id="packages_number">
+                                        </td>
+                                        <td>
+                                            <label for="gross_weight">毛重</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="grossWeight" id="gross_weight">
+                                        </td>
+                                        <td>
+                                            <label for="net_weight">净重</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="netWeight" id="net_weight">
+                                        </td>
+                                        <td>
+                                            <label for="volume">体积</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="volume" id="volume">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="quantity">数量</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="quantity" id="quantity">
+                                        </td>
+                                        <td>
+                                            <label for="unit_chs">单位(中文)</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="unitChs" id="unit_chs">
+                                        </td>
+                                        <td>
+                                            <label for="unit_en">单位(英文)</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="unitEn" id="unit_en">
+                                        </td>
+                                        <td>
+                                            <label for="manufacture_place">货源地</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="manufacturePlace" id="manufacture_place">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="unit_price">报关单价</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="unitPrice" id="unit_price">
+                                        </td>
+                                        <td>
+                                            <label for="amount">报关总价</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="amount" id="amount">
+                                        </td>
+                                        <td>
+                                            <label for="currency">币种</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="currency" id="currency">
+                                        </td>
+                                        <td>
+                                            <label for="drawback">退税率(%)</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="drawback" id="drawback">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="purchase_unit_price">购入单价</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="purchaseUnitPrice" id="purchase_unit_price">
+                                        </td>
+                                        <td>
+                                            <label for="purchase_amount">购入总价</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="purchaseAmount" id="purchase_amount">
+                                        </td>
+                                        <td>
+                                            <label for="factory">工厂</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="factory" id="factory">
+                                        </td>
+                                        <td>
+                                            <label for="coefficient">换汇成本</label>
+                                        </td>
+                                        <td>
+                                            <input readonly type="text" name="coefficient" id="coefficient" value="111">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="item-list-btns">
+                                    <span class="item-list-cancel">关闭</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail-btns">
+                            <span class="detail-print">打印预览</span>
+                            <span class="detail-close">关闭</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 工具页 -->
+                <div id="page_tools">
+                    <section class="amount-conversion">
+                        <h5>金额转换</h5>
+                        <textarea class="amount-area" id="" cols="30" rows="10"></textarea>
+                        <p class="btn-wrap">
+                            <span class="btn-span amount-chs-btn">
+                                转为中文大写金额
+                            </span>
+                            <span class="btn-span amount-en-btn">
+                                转为英文大写金额
+                            </span>
+                        </p>  
+                    </section>
+
+                    <section class="letter-conversion">
+                        <h5>字母大小写转换</h5>
+                        <textarea class="letter-area" id="" cols="30" rows="10"></textarea>
+                        <p class="btn-wrap">
+                            <span class="btn-span upper-btn">
+                                转为大写
+                            </span>
+                            <span class="btn-span lower-btn">
+                                转为小写
+                            </span>
+                        </p>
+                    </section>
+                </div>
+
+                <!-- 设置页 -->
+                <div id="page_setting">
+                    <div class="tab-box">
+                        <div class="tab-head">
+                            <ul class="tab-tag-box">
+                                <li class="tab-tag actived">用户资料</li>
+                                <li class="tab-tag company-tag">公司资料</li>
+                            </ul>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-content actived">
+                                <form class="user-info">
+                                    <p>
+                                        <label for="oldName">
+                                            用户名:
+                                        </label>
+                                        <input type="text" id="oldName" placeholder="输入当前用户名">
+                                    </p>
+                                    <p>
+                                        <label for="oldPassword">
+                                            密码:
+                                        </label>
+                                        <input type="password" id="oldPassword" placeholder="输入当前密码">
+                                    </p>
+                                    <p>
+                                        <label for="newName">
+                                            新用户名:
+                                        </label>
+                                        <input type="text" id="newName" placeholder="输入4-16位字母">
+                                    </p>
+                                    <p>
+                                        <label for="newPassword">
+                                            新密码:
+                                        </label>
+                                        <input type="password" id="newPassword" placeholder="输入4-16位数字或字母">
+                                    </p>
+                                    <p>
+                                        <label for="repeatPassword">
+                                            新密码确认:
+                                        </label>
+                                        <input type="password" id="repeatPassword" placeholder="再次输入新密码">                                        
+                                    </p>
+                                    <p class="btn-wrap">
+                                        <span class="btn-span">确认修改</span>
+                                    </p>
+                                </form>
+                            </div>
+                            <div class="tab-content">
+                                <form class="company-info">
+                                    <p>
+                                        <label for="companyNameChs">
+                                            公司名称(中文):
+                                        </label>
+                                        <input id="companyNameChs" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="companyNameEn">
+                                            公司名称(英文):
+                                        </label>
+                                        <input id="companyNameEn" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="companyAddressChs">
+                                            公司地址(中文):
+                                        </label>
+                                        <input id="companyAddressChs" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="companyAddressEn">
+                                            公司地址(英文):
+                                        </label>
+                                        <input id="companyAddressEn" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="companyCode">
+                                            统一社会信用代码:
+                                        </label>
+                                        <input id="companyCode" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="companyContacts">
+                                            联系人:
+                                        </label>
+                                        <input id="companyContacts" type="text">
+                                    </p>
+                                    <p>
+                                        <label for="companyTel">
+                                            联系电话:
+                                        </label>
+                                        <input id="companyTel" type="text">
+                                    </p>  
+                                    <p class="btn-wrap">
+                                        <span class="btn-span">
+                                            确认修改
+                                        </span>
+                                    </p>                              
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="contextmenu">
+        <!-- <ul>
+            <li>打开</li>
+            <li>2</li>
+            <li>3</li>
+        </ul> -->
+    </div>
+    <div class="tips-box">
+        <p class="tips"></p>
+    </div>
+    <div class="warning-mask">
+        <div class="warning-box">
+            <div class="warning-title"></div>
+            <div class="warning-message"></div>
+            <div>
+                <span class="warning-ok-btn">确定</span>
+                <span class="warning-cancel-btn">取消</span>
+            </div>
+        </div>
+    </div>
+    <script src="js/md.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/selectData.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/tips.js"></script>
+    <script src="js/edit.js"></script>
+    <script src="js/preview.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/warning.js"></script>
+    <script src="js/tabBox.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/cheseNumber.js"></script>
+    <script src="js/englishNumber.js"></script>
+    <script src="js/tools.js"></script>
+</body>
+
+</html>

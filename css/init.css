@@ -1,0 +1,53 @@
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+body {
+    color: #505254;
+    -webkit-user-select:none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+div {
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}

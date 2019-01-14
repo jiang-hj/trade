@@ -1,0 +1,78 @@
+body {
+    background-color: #efefef;
+    padding: 100px;
+}
+
+.login-page {
+    width: 300px; 
+    height: 300px; 
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #248;
+    position: relative;
+}
+
+#logo_wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #336699;
+    margin: 35px auto 30px;    
+}
+
+#logo {
+    height: 34px;
+    margin-top: 4px;
+    margin-left: 5px;
+    /* width: 30px; */
+    vertical-align: top;
+}
+
+form p {
+    border: 1px solid #eee;
+    height: 32px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+
+form label {
+    float: left;
+    box-sizing: border-box;
+    padding-right: 5px;
+    width: 25%;
+    text-align: center;
+}
+
+form input {
+    outline: none;
+    border: none;
+    vertical-align: top;
+    width: 75%;
+    float: right; 
+    padding: 0;
+    line-height: 30px;
+}
+
+.login-btn {
+    display: block;
+    background-color: #336699;
+    text-align: center;
+    color: #fff;
+}
+
+.actived {
+    opacity: 0.9;
+}
+
+.note {
+    font-size: 10px;
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    color: #aaa;
+}

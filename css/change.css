@@ -1,0 +1,30 @@
+#page_profile {
+    display: none;
+}
+
+#page_detail,
+#page_preview,
+#page_tools,
+#page_setting {
+    display: none;
+}
+
+.show-profile #page_profile {
+    display: block;
+}
+
+.show-setting #page_setting {
+    display: block;
+}
+
+.show-tools #page_tools {
+    display: block;
+}
+
+/* .show-detail #page_detail {
+    display: block;    
+} 
+
+.show-preview #page_preview {
+    display: block;    
+}  */
