@@ -17,14 +17,12 @@ profileBox.addEventListener('DOMMouseScroll', function (e) {
 });
 
 function mousewheel(e) {
-    console.log(e)
     let top,
         max = 40,
         min = profileBox.offsetHeight - profileBody.offsetHeight - 50;
     min = 40 < min ? 40 : min;
     e.stopPropagation();
     let delta = e.wheelDelta ? e.wheelDelta : -e.detail;
-    console.log(delta)
     if (delta > 0) {
         top = profileBody.offsetTop + 150;
         if (top <= max) {
