@@ -7,15 +7,23 @@ let contextmenu = document.getElementsByClassName('contextmenu')[0];
 
 
 //滚动
-profileBox.addEventListener('mousewheel', function (e) {
-    console.log(11)
+profileBox.addEventListener('mousewheel', function (e) {    
+    mousewheel(e)
+});
+
+//火狐
+profileBox.addEventListener('DOMMouseScroll', function (e) {    
+    mousewheel(e)
+});
+
+function mousewheel(e) {
     console.log(e)
     let top,
         max = 40,
-        min = this.offsetHeight - profileBody.offsetHeight - 50;
+        min = profileBox.offsetHeight - profileBody.offsetHeight - 50;
     min = 40 < min ? 40 : min;
     e.stopPropagation();
-    let delta = e.wheelDelta ? e.wheelDelta : e.detail;
+    let delta = e.wheelDelta ? e.wheelDelta : -e.detail;
     console.log(delta)
     if (delta > 0) {
         top = profileBody.offsetTop + 150;
@@ -33,7 +41,7 @@ profileBox.addEventListener('mousewheel', function (e) {
             profileBody.style.top = min + 'px';
         }
     }
-});
+}
 
 // profileBody.addEventListener('dblclick',function(e) {
 //     e.preventDefault();
