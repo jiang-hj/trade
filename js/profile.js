@@ -13,7 +13,7 @@ profileBox.addEventListener('mousewheel', function (e) {
         min = this.offsetHeight - profileBody.offsetHeight - 50;
     min = 40 < min ? 40 : min;
     e.stopPropagation();
-    let delta = e.wheelDelta;
+    let delta = e.wheelDelta || e.detail;
     if (delta > 0) {
         top = profileBody.offsetTop + 150;
         if (top <= max) {
