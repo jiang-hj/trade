@@ -373,17 +373,6 @@ i.checkbox::before {
     z-index: 10;
 }
 
-/* #page_detail .button-box-top {
-    height: 40px;
-    width: 1340px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    margin-left: -670px;
-    z-index: 1;
-    background-color: #fac;
-} */
-
 .detail {
     background-color: #fff;
     font-size: 14px;
@@ -473,9 +462,6 @@ textarea[disabled] {
     background-color: #fff;
 }
 
-/* .item-list {
-} */
-
 .item-list table {
     width: 100%;
     position: relative;
@@ -510,6 +496,10 @@ tr.onedit {
 
 tbody.onedit td:nth-of-type(14) span{
     visibility: hidden;
+}
+
+.item-list-table td:nth-of-type(1) {
+    cursor: pointer;
 }
 
 .item-list-table td:nth-of-type(5) {

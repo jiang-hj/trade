@@ -1,3 +1,13 @@
 # trade
-practice demo
-预览地址[demo](https://jiang-hj.github.io/trade/)
+
+预览地址[demo](https://jiang-hj.github.io/trade/)  
+
+练手项目,用原生js编写;未进行兼容性适配;
+
+默认用户名密码为admin
+
+实现功能：  
+>单证数据的录入、再编辑、状态改变以及复制   
+>历史记录的筛选，搜索      
+>预览及打印生成的文档       
+>实现自定义日历，右键菜单，提示框，确认框，下拉框等 

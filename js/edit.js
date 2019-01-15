@@ -805,7 +805,7 @@
         items.forEach(function (item, i) {
             html += `
                 <tr data-index='${i}' draggable="true">
-                    <td class="item-td-index">${i+1}</td>
+                    <td class="item-td-index" title="拖拽改变顺序">${i+1}</td>
                     <td>${item.hsCode}</td>
                     <td>
                         <p>${item.productNameChs} ${item.productNameEn}</p>
